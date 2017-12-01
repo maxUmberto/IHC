@@ -68,7 +68,7 @@ if(empty($_SESSION['msg'] == '')){
 
     $query = $mysqli->query($sql);
 
-    $_SESSION['msg'] = '<div class="alert alert-succes" role="alert">Usuário cadastrado com sucesso</div>';
+    $_SESSION['msg'] = '<div class="alert alert-success text-center" role="alert">Usuário cadastrado com sucesso</div>';
     header('Location: index.php');
   }
   else{
