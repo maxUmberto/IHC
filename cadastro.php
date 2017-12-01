@@ -41,14 +41,16 @@
           <span class="ccform-addon"><i class="fa fa-key fa-2x"></i></span>
           <input class="ccformfield" type="password" placeholder="Confirme sua senha" name="senha2">
       </div>
-      <div class="ccfield-prepend">
+      <div class="ccfield-prepend row" style="margin-left:0px;">
+        <div class="col-md-ofset-0"></div>
           <button type="submit" class="ccbtn">
             Cadastrar <i class="fa fa-sign-in" aria-hidden="true"></i>
           </button>
-      </div>
+          <div class="col-md-0" style="margin-left:10px"></div>
       <button type="button" class="ccbtn">
         Voltar <i class="fa fa-undo" aria-hidden="true"></i>
       </button>
+    </div>
       </form>
   </div>
   <script src="js/bootstrap.min.cs"></script>

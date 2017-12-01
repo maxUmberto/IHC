@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="pt-br">
   <head>
   <meta charset="utf-8">
@@ -43,6 +45,18 @@
       <!-- Fim Modal -->
 
       <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+          <?php
+          if(isset($_SESSION['msg'])){
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+          }
+          ?>
+        </div>
+          <div class="col-md-2"></div>
+        </div>
         <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4">
