@@ -1,0 +1,18 @@
+CREATE DATABASE ihc;
+
+USE ihc;
+
+CREATE TABLE usuarios(
+    email VARCHAR(60) NOT NULL PRIMARY KEY,
+    nome VARCHAR(60),
+    senha VARCHAR(60),
+    INDEX (email)
+);
+
+CREATE TABLE videos(
+    nome_video VARCHAR(70),
+    conceito VARCHAR(300),
+    descricao VARCHAR(300),
+    link VARCHAR(200),
+    INDEX (nome_video)
+);
