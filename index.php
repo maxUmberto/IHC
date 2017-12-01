@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Repositorio de TI em Libras</title>
-        <link rel="stylesheet" href="master.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <div class="container">
                 <div class="header">
                     <div class="titulo_header">
