@@ -1,6 +1,9 @@
 body{
   background-color: #c1c6cc;
-  padding: 10px 0 10px 0;
+}
+
+.wrapper{
+  padding: 10px 10px 10px 10px;
 }
 
 .ccheader {
