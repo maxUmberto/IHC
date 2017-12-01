@@ -21,10 +21,8 @@
       <form method="post" action="valida.php" class="ccform">
         <?php
           if(isset($_SESSION['msg'])){
-              echo '<div class="alert alert-danger" role="alert">';
               echo $_SESSION['msg'];
               unset($_SESSION['msg']);
-              echo '</div>';
           }
         ?>
       <div class="ccfield-prepend">

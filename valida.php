@@ -6,6 +6,8 @@
   $senha = $_POST['senha'];
   $senha2 = $_POST['senha2'];
 
+  $_SESSION['msg'] = '';
+
 // Define uma função que poderá ser usada para validar e-mails usando regexp
 function validaEmail($email) {
   $conta = "/^[a-zA-Z0-9\._-]+@";
@@ -28,24 +30,47 @@ function validaNome($nome){
 }
 
 function validaSenha($senha,$senha2){
-  if(empty($senha))
+  if(empty($senha)){
     return false;
-  else if(strlen($senha)<=5)
+    //echo 'senha vazia';
+  }else if(strlen($senha)<=5){
     return false;
-  else if($senha != $senha2 )
+    //echo 'senha curta';
+  }else if($senha != $senha2 ){
     return false;
+    //echo 'senhas diferentes';
+  }
+  return true;
 }
 
-if (!validaSenha($senha,$senha2))
+if(!validaSenha($senha,$senha2)){
   $_SESSION['msg'] .= "Senha inválida<br>";
+}
 
-if(!validaNome($nome))
+if(!validaNome($nome)){
   $_SESSION['msg'] .= "Nome inválido<br>";
+}
 
-if (!validaEmail($email))
+if (!validaEmail($email)){
   $_SESSION['msg'] .= "O e-mail inserido é invalido<br>";
+}
 
-if(isset($_SESSION['msg'])){
+if(empty($_SESSION['msg'] == '')){
+  $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">'.$_SESSION['msg'].'</div>';
   header('Location: cadastro.php');
+}else{
+  require_once('connection.php');
+
+  $sql = "SELECT * FROM usuarios WHERE email = '$email'";
+  $resultado = mysqli_query($mysqli,$sql);
+  if(mysqli_num_rows($resultado) == 0){
+    $sql = "INSERT INTO usuarios VALUES ('$email','$nome', '$senha')";
+
+    $query = $mysqli->query($sql);
+  }
+  else{
+    $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email já está sendo usado</div>';
+    header('Location: cadastro.php');
+  }
 }
 ?>
