@@ -4,17 +4,17 @@
   <meta charset="utf-8">
     <title>LibrasTec</title>
 
-    <link href="css/estilo.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/estilo.css" rel="stylesheet">
 
   </head>
   <body>
     <nav class="navbar" id="home">
-      <div class="container-fluid">
-         <ul class="nav navbar-nav navbar-right">
-         <a data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span> Login</a>
-         <a data-toggle="modal" data-target="#login"><span class="fa fa-sign-in"></span> Cadastre-se</a>
-       </ul>
+      <div class="row">
+         <a href=""><imput type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Login</a>
+         <a href="cadastro.php"><imput type="submit" class="btn btn-primary"><span class="fa fa-sign-in"></span> Cadastre-se</a>
       </div>
     </nav>
     <!-- Modal -->
