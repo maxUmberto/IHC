@@ -1,4 +1,4 @@
-.wrapper{
+body{
   background-color: #c1c6cc;
   padding: 10px 0 10px 0;
 }
@@ -11,8 +11,8 @@
 
 /* Form CSS*/
 .ccform {
-   margin: 0 auto;
-    width: 800px;
+  margin: 0 auto;
+  width: 800px;
 }
 .ccfield-prepend{
 	margin-bottom:10px;
@@ -22,7 +22,7 @@
 .ccform-addon{
 	color:#5f9ae2;
 	float:left;
-	padding:8px;
+	padding:10px;
 	width:8%;
 	background:#FFFFFF;
 	text-align:center;
@@ -53,6 +53,7 @@
 	text-decoration:none;
 	font-weight:bold;
 }
+
 .ccbtn:hover{
 	background:#89b6ed;
 }
