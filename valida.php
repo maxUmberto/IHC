@@ -1,10 +1,10 @@
 <?php
   session_start();
 
-  $email = $_POST['email'];
-  $nome = $_POST['nome'];
-  $senha = $_POST['senha'];
-  $senha2 = $_POST['senha2'];
+  $email = htmlspecialchars(trim($_POST['email']));
+  $nome = htmlspecialchars(trim($_POST['nome']));
+  $senha = sha1(htmlspecialchars(trim($_POST['senha'])));
+  $senha2 = sha1(htmlspecialchars(trim($_POST['senha2'])));
 
   $_SESSION['msg'] = '';
 
@@ -67,6 +67,9 @@ if(empty($_SESSION['msg'] == '')){
     $sql = "INSERT INTO usuarios VALUES ('$email','$nome', '$senha')";
 
     $query = $mysqli->query($sql);
+
+    $_SESSION['msg'] = '<div class="alert alert-succes" role="alert">Usuário cadastrado com sucesso</div>';
+    header('Location: index.php');
   }
   else{
     $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email já está sendo usado</div>';
