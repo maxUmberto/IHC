@@ -13,11 +13,12 @@ session_start();
 
   </head>
   <body>
-    <nav class="navbar" id="home">
-      <div class="row">
-         <a href=""><imput type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Login</a>
-         <a href="cadastro.php"><imput type="submit" class="btn btn-primary"><span class="fa fa-sign-in"></span> Cadastre-se</a>
+
+    <nav class="navbar navbar-right" id="home">
+         <a href="#login" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Login</a>
+         <a class="btn btn-primary" href="cadastro.php"><span class="fa fa-sign-in"></span> Cadastre-se</a>
       </div>
+    </div>
     </nav>
     <!-- Modal -->
       <div class="modal fade" id="login" role="dialog">
