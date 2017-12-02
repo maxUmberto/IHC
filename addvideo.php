@@ -34,7 +34,7 @@
 
   <!--Div do titulo da pagina-->
   <header class="ccheader">
-    <h1>Adicionar Video</h1>
+    <h1 style="margin-left:400px;">Adicionar Video</h1>
   </header>
   <div class="wrapper"><!-- Div container -->
     <form method="post" action="valida_video.php" class="ccform">

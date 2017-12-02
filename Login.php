@@ -38,7 +38,7 @@
 
   <!--Div do titulo da pagina-->
   <header class="ccheader">
-    <h1>Login</h1>
+    <h1 style="margin-left:200px;">Login</h1>
   </header>
   <div class="wrapper"><!-- Div container -->
 
@@ -68,7 +68,7 @@
       <!--<button type="button" class="ccbtn">-->
         <a href="index.php" class="ccbtn" style="text-decoration:none">Voltar <i class="fa fa-undo" aria-hidden="true"></i></a>
       </button>
-    </div><!-- fim da div dos botões>
+    </div><!-- fim da div dos botões-->
       </form>
   </div><!-- fim da div container-->
   <script src="js/bootstrap.min.cs"></script>
