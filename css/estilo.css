@@ -60,3 +60,9 @@ body{
 .ccbtn:hover{
 	background:#89b6ed;
 }
+
+.resultado{
+  background-color: #fff;
+  padding: 10px 10px 1px 10px;
+  margin-top: 10px;
+}

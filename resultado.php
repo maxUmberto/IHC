@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +23,7 @@
       <div class="col-md-8">
         <form class="" action="pesquisa.php" method="post">
           <div class="input-group col-md-12">
-            <input type="text" class="form-control input-lg" placeholder="Digite o termo desejado..." />
+            <input type="text" class="form-control input-lg" placeholder="Digite o termo desejado..." name="busca"/>
             <span class="input-group-btn">
               <button type="submit" class="btn btn-primary btn-lg" type="button">
                 <span class="fa fa-search" aria-hidden="true"></span>
@@ -31,6 +34,25 @@
       </div>
       <div class="col-md-2"></div>
     </div>
+
+  <?php
+    for($i = 0; $i < $_SESSION['num']; $i++){
+      echo '<div class="row">';
+      echo '<div class="col-md-2"></div>';
+      echo '<div class="col-md-8">';
+      echo    '<a href="visualiza.php?$i" class="link_resultado">';
+      echo      '<div class="resultado">';
+      echo          "<p>".$_SESSION['nome_video']["$i"];
+      echo          "<p>".$_SESSION['descricao']["$i"]."</p>";
+      echo      '</div>';
+      echo    '</a>';
+
+      echo '</div>';
+      echo '<div class="col-md-2"></div>';
+      echo '</div>';
+    }
+  ?>
+
   </div>
   <script src="js/bootstrap.min.js"></script>
 </body>

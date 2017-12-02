@@ -37,7 +37,7 @@ if(isset($nome)){
   }
 }
 
-function validaSenha($senha,$senha2){
+function validaSenha($senha){
   if(empty($senha)){
     return false;
     //echo 'senha vazia';
