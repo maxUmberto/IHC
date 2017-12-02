@@ -9,7 +9,7 @@
   }
 
   $_SESSION['msg'] = '';
-
+  $_SESSION['nome'] ='';
 // Define uma função que poderá ser usada para validar e-mails usando regexp
 function validaEmail($email) {
   $conta = "/^[a-zA-Z0-9\._-]+@";
@@ -37,7 +37,7 @@ if(isset($nome)){
   }
 }
 
-function validaSenha($senha,$senha2){
+function validaSenha($senha){
   if(empty($senha)){
     return false;
     //echo 'senha vazia';
@@ -95,6 +95,20 @@ if(empty($_SESSION['msg'] == '')){
       $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email já está sendo usado</div>';
       header('Location: cadastro.php');
     }
+  }else
+    require_once('connection.php');
+    $verifica = mysql_query("SELECT * FROM usuarios WHERE email = '$email' AND senha = 'sha1(htmlspecialchars(trim($senha)))'") or die("erro ao selecionar");
+
+    if(mysqli_num_rows($verifica) <= 0){
+      $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email ou senha inválidos </div>';
+      header('Location: login.php');
+
+    }else {
+      while($resultado = mysqli_fetch_row($verifica)){
+        $_SESSION['nome1'] = $resultado[1];
+      }
+    }
+
   }
-}
+
 ?>
