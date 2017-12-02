@@ -14,40 +14,46 @@ $num = $_GET['a'];
 </head>
 <body>
 
-  <div class="float-right">
-    <?php
-      if(isset($_SESSION['nome'])){
-        echo '<button class="btn btn-primary btn-lg"><span class="fa fa-user" aria-hidden="true"></span> '.$_SESSION['nome'].'</button>';
-        ?>
-        <a class="btn btn-primary btn-lg" href="addvideo.php"><span class="fa fa-upload" aria-hidden="true"></span> Enviar vídeo</a>
-        <a class="btn btn-primary btn-lg" href="logout.php"><span class="fa fa-sign-out" aria-hidden="true"></span>Sair</a>
-      <?php
-    }else{
-      ?>
-      <a class="btn btn-primary btn-lg" href="login.php"><span class="fa fa-user-o" aria-hidden="true"></span>Login</a>
-      <a class="btn btn-primary btn-lg" href="cadastro.php"><span class="fa fa-sign-in" aria-hidden="true"></span> Cadastre-se</a>
-      <?php
-    }
-    ?>
-  </div>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <div class="">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <form class="" action="pesquisa.php" method="post">
-          <div class="input-group col-md-12">
-            <input type="text" class="form-control input-lg" placeholder="Digite o termo desejado..." name="busca"/>
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-primary btn-lg" type="button">
-                <span class="fa fa-search" aria-hidden="true"></span>
-              </button>
-            </span>
-          </div>
-        </form>
-      </div>
-      <div class="col-md-2"></div>
     </div>
+
+    <div class="float-right">
+      <?php
+        if(isset($_SESSION['nome'])){
+          echo '<a href="index.php" class="btn btn-primary btn-lg"><span class="fa fa-user" aria-hidden="true"></span> '.$_SESSION['nome'].'</a>';
+          ?>
+          <a class="btn btn-primary btn-lg" href="addvideo.php"><span class="fa fa-upload" aria-hidden="true"></span> Enviar vídeo</a>
+          <a class="btn btn-primary btn-lg" href="logout.php"><span class="fa fa-sign-out" aria-hidden="true"></span>Sair</a>
+        <?php
+      }else{
+        ?>
+        <a class="btn btn-primary btn-lg" href="login.php"><span class="fa fa-user-o" aria-hidden="true"></span>Login</a>
+        <a class="btn btn-primary btn-lg" href="cadastro.php"><span class="fa fa-sign-in" aria-hidden="true"></span> Cadastre-se</a>
+        <?php
+      }
+      ?>
+    </div>
+
+    <div class="container">
+      <div class="row ccheader">
+        <div class="col-md-2"></div>
+        <div class="col-md-12">
+          <form class="" action="pesquisa.php" method="post">
+            <div class="input-group col-md-12"style="width:700px; margin-left:30px;">
+              <input type="text" class="form-control input-lg"  placeholder="Digite o termo desejado..." name="busca"/>
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary btn-lg" type="button">
+                  <span class="fa fa-search" aria-hidden="true"></span>
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </nav>
 
     <div class="row">
       <div class="col-md-2"></div>
