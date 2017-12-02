@@ -16,3 +16,7 @@ CREATE TABLE videos(
     link VARCHAR(200),
     INDEX (nome_video)
 );
+INSERT INTO Customers (nome_video, conceito, descricao, link)
+VALUES ('wingardiumLeviRola','aVaraqueRaba','A Rola Wesley','xvideos.com');
+INSERT INTO Customers (nome_video, conceito, descricao, link)
+VALUES ('m4a4','AK-47','AWP','p90');
