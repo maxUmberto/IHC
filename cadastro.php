@@ -55,7 +55,7 @@
       <!--<button type="button" class="ccbtn">-->
         <a href="index.php" class="ccbtn" style="text-decoration:none">Voltar <i class="fa fa-undo" aria-hidden="true"></i></a>
       </button>
-    </div><!-- fim da div dos botões-->
+    </div><!-- fim da div dos botões>
       </form>
   </div><!-- fim da div container-->
   <script src="js/bootstrap.min.cs"></script>
