@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +10,6 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/font-awesome.css" rel="stylesheet">
   <link href="css/estilo.css" rel="stylesheet">
-
 </head>
 <body>
 
@@ -40,26 +42,21 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <div class="input-group col-md-12">
-            <input type="text" class="form-control input-lg" placeholder="Buscar" />
-            <span class="input-group-btn">
-              <button class="btn btn-primary btn-lg" type="button">
-                <span class="fa fa-search" aria-hidden="true"></span>
-              </button>
-            </span>
-          </div>
+          <form class="" action="pesquisa.php" method="post">
+            <div class="input-group col-md-12">
+              <input type="text" class="form-control input-lg" placeholder="Digite o termo desejado..." name="busca"/>
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-primary btn-lg" type="button">
+                  <span class="fa fa-search" aria-hidden="true"></span>
+                </button>
+              </span>
+            </div>
+          </form>
         </div>
         <div class="col-md-2"></div>
       </div>
     </div>
   </div>
   <script src="js/bootstrap.min.js"></script>
-  <script>
-    $(function(){
-      $("#btAtualizarValor").click(function(){
-          $("#id_price").val($("#novoValor").val());
-      });
-    });
-  </script>
   </body>
 </html>
