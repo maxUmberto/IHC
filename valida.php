@@ -56,7 +56,7 @@ function comparaSenha($senha, $senha2){
   return true;
 }
 
-if(!validaSenha($senha){
+if(!validaSenha($senha)){
   $_SESSION['msg'] .= "Senha inválida<br>";
   if(isset($senha2)){
     if(!comparaSenha($senha,$senha2)){
