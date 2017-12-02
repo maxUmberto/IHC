@@ -13,7 +13,7 @@ CREATE TABLE videos(
     nome_video VARCHAR(70),
     conceito VARCHAR(300),
     descricao VARCHAR(300),
-    link VARCHAR(200),
+    link VARCHAR(400),
     INDEX (nome_video)
 );
 INSERT INTO usuarios (nome_video, conceito, descricao, link)
