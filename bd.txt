@@ -20,5 +20,6 @@ INSERT INTO usuarios (nome_video, conceito, descricao, link)
 VALUES ('wingardiumLeviRola','aVaraqueRaba','A Rola Wesley','xvideos.com');
 INSERT INTO usuarios (nome_video, conceito, descricao, link)
 VALUES ('m4a4','AK-47','AWP','p90');
-INSERT INTO usuarios (nome_video, conceito, descricao, link)
-VALUES ('Rafael','Michelangelo','Donatelo','https://www.youtube.com/watch?v=q8gnAgrdUSc');
+INSERT INTO videos (nome_video, conceito, descricao, link)
+VALUES ('Rafael','Michelangelo','Donatelo','<iframe width="854" height="480" src="https://www.youtube.com/embed/q8gnAgrdUSc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>');
+INSERT INTO `videos` (`nome_video`, `conceito`, `descricao`, `link`) VALUES ('teste', 'teste', 'teste', '<iframe width="854" height="480" src="https://www.youtube.com/embed/nWsNzK1VM8k?autoplay=1&cc_load_policy=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>');

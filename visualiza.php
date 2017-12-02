@@ -1,5 +1,6 @@
 <?php
 session_start();
+$num = $_GET['a'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,9 +11,9 @@ session_start();
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/font-awesome.css" rel="stylesheet">
   <link href="css/estilo.css" rel="stylesheet">
-
 </head>
 <body>
+
   <div class="float-right">
       <a class="btn btn-primary btn-lg" href="login.php"><span class="fa fa-user-o" aria-hidden="true"></span>Login</a>
       <a class="btn btn-primary btn-lg" href="cadastro.php"><span class="fa fa-sign-in" aria-hidden="true"></span> Cadastre-se</a>
@@ -36,25 +37,22 @@ session_start();
       <div class="col-md-2"></div>
     </div>
 
-  <?php
-    for($i = 0; $i < $_SESSION['num']; $i++){
-      echo '<div class="row">';
-      echo '<div class="col-md-2"></div>';
-      echo '<div class="col-md-8">';
-      echo    '<a href="visualiza.php?a='.$i.'" class="link_resultado">';
-      echo      '<div class="resultado">';
-      echo          "<p>".$_SESSION['nome_video']["$i"];
-      echo          "<p>".$_SESSION['descricao']["$i"]."</p>";
-      echo      '</div>';
-      echo    '</a>';
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="resultado">
+          <?php
+            echo "<h3 class='text-center'>".$_SESSION['nome_video']["$num"]."</h3>";
+            echo "<p class='text-center'>".$_SESSION['conceito']["$num"]."</p>";
+           ?>
+          <div class="embed-responsive embed-responsive-21by9 video">
+            <?php echo $_SESSION['link']["$num"]; ?>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
 
-      echo '</div>';
-      echo '<div class="col-md-2"></div>';
-      echo '</div>';
-    }
-  ?>
-
-  </div>
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
