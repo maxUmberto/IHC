@@ -6,7 +6,6 @@
     header('Location: index.php');
   }
 ?>
-
 <html>
 <head>
   <meta charset="utf-8">
@@ -19,6 +18,24 @@
 </head>
 
 <body>
+
+  <div class="float-right">
+    <?php
+      if(isset($_SESSION['nome'])){
+        echo '<button class="btn btn-primary btn-lg"><span class="fa fa-user" aria-hidden="true"></span> '.$_SESSION['nome'].'</button>';
+        ?>
+        <a class="btn btn-primary btn-lg" href="#"><span class="fa fa-upload" aria-hidden="true"></span> Enviar vídeo</a>
+        <a class="btn btn-primary btn-lg" href="logout.php"><span class="fa fa-sign-out" aria-hidden="true"></span>Sair</a>
+      <?php
+    }else{
+      ?>
+      <a class="btn btn-primary btn-lg" href="login.php"><span class="fa fa-user-o" aria-hidden="true"></span>Login</a>
+      <a class="btn btn-primary btn-lg" href="cadastro.php"><span class="fa fa-sign-in" aria-hidden="true"></span> Cadastre-se</a>
+      <?php
+    }
+    ?>
+  </div>
+
   <!--Div do titulo da pagina-->
   <header class="ccheader">
     <h1>Login</h1>
