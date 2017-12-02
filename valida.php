@@ -97,14 +97,17 @@ if(empty($_SESSION['msg'] == '')){
     }
   }else
     require_once('connection.php');
-    $verifica = mysql_query("SELECT * FROM usuarios WHERE email = '$email' AND senha = 'sha1(htmlspecialchars(trim($senha)))'") or die("erro ao selecionar");
-
-    if(mysqli_num_rows($verifica) <= 0){
+    $sql = "SELECT FROM usuarios WHERE email = '$email' and senha = '$senha'";
+    $sql = mysqli_query($mysqli,$sql);
+    echo $email;
+    echo $senha;
+    if(mysqli_num_rows($sql) == 0){
+      echo 'oi';
       $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email ou senha inválidos </div>';
-      header('Location: login.php');
+    //  header('Location: login.php');
 
     }else {
-      while($resultado = mysqli_fetch_row($verifica)){
+      while($resultado = mysqli_fetch_row($sql)){
         $_SESSION['nome1'] = $resultado[1];
       }
     }
