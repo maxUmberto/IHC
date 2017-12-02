@@ -40,7 +40,7 @@ session_start();
         <div class="col-md-2"></div>
         <div class="col-md-12">
           <form class="" action="pesquisa.php" method="post">
-            <div class="input-group col-md-12">
+            <div class="input-group col-md-12"style="width:700px; margin-left:30px;">
               <input type="text" class="form-control input-lg"  placeholder="Digite o termo desejado..." name="busca"/>
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-primary btn-lg" type="button">
