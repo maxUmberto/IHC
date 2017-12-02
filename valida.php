@@ -2,14 +2,13 @@
   session_start();
 
   $email = htmlspecialchars(trim($_POST['email']));
-  $senha = sha1(htmlspecialchars(trim($_POST['senha'])));
+  $senha = htmlspecialchars(trim($_POST['senha']));
   if(isset($_POST['nome'])){
     $nome = htmlspecialchars(trim($_POST['nome']));
-    $senha2 = sha1(htmlspecialchars(trim($_POST['senha2'])));
+    $senha2 = htmlspecialchars(trim($_POST['senha2']));
   }
 
   $_SESSION['msg'] = '';
-  $_SESSION['nome'] ='';
 // Define uma função que poderá ser usada para validar e-mails usando regexp
 function validaEmail($email) {
   $conta = "/^[a-zA-Z0-9\._-]+@";
@@ -38,7 +37,7 @@ if(isset($nome)){
 }
 
 function validaSenha($senha){
-  if(empty($senha)){
+  if($senha == ''){
     return false;
     //echo 'senha vazia';
   }else if(strlen($senha)<=5){
@@ -79,6 +78,8 @@ if(empty($_SESSION['msg'] == '')){
   }
 }else{
   if(isset($nome)){
+    $senha = sha1($senha);
+
     require_once('connection.php');
 
     $sql = "SELECT * FROM usuarios WHERE email = '$email'";
@@ -95,22 +96,23 @@ if(empty($_SESSION['msg'] == '')){
       $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email já está sendo usado</div>';
       header('Location: cadastro.php');
     }
-  }else
-    require_once('connection.php');
-    $sql = "SELECT FROM usuarios WHERE email = '$email' and senha = '$senha'";
-    $sql = mysqli_query($mysqli,$sql);
-    echo $email;
-    echo $senha;
-    if(mysqli_num_rows($sql) == 0){
-      echo 'oi';
-      $_SESSION['msg'] = '<div class="alert alert-danger" role="alert"> Email ou senha inválidos </div>';
-    //  header('Location: login.php');
+  }else{
+    $senha = sha1($senha);
 
-    }else {
-      while($resultado = mysqli_fetch_row($sql)){
-        $_SESSION['nome1'] = $resultado[1];
-      }
+    require_once('connection.php');
+
+    $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+
+    $sql = mysqli_query($mysqli,$sql);
+
+    if(mysqli_num_rows($sql) > 0){
+      $resultado = mysqli_fetch_row($sql);
+      $_SESSION['nome'] = $resultado[1];
+
+      $_SESSION['msg'] = '<div class="alert alert-success text-center" role="alert">Bem vindo '.$_SESSION['nome'].'</div>';
+      header('Location: index.php');
     }
+  }
 
   }
 
