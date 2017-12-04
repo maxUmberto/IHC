@@ -60,6 +60,16 @@
   }else{
     require_once('connection.php');
 
+    function convertYoutube($string) {
+    	return preg_replace(
+    		"/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+    		"<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/$2\" allowfullscreen></iframe>",
+    		$string
+    	);
+    }
+
+    $link = convertYoutube($link);
+
     $sql = "INSERT INTO videos VALUES ('$nome_video','$conceito', '$descricao', '$link')";
 
     $mysqli->query($sql) or die(mysqli_error($mysqli));
