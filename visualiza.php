@@ -22,7 +22,7 @@ $num = $_GET['a'];
     <div class="float-right">
       <?php
         if(isset($_SESSION['nome'])){
-          echo '<a href="index.php" class="btn btn-primary btn-lg" disabled><span class="fa fa-user" aria-hidden="true"></span> '.$_SESSION['nome'].'</a>';
+          echo '<button class="btn btn-primary btn-lg" disabled><span class="fa fa-user" aria-hidden="true"></span> '.$_SESSION['nome'].'</button>';
           ?>
           <a class="btn btn-primary btn-lg" href="addvideo.php"><span class="fa fa-upload" aria-hidden="true"></span> Enviar vídeo</a>
           <a class="btn btn-primary btn-lg" href="logout.php"><span class="fa fa-sign-out" aria-hidden="true"></span>Sair</a>
