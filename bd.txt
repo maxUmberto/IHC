@@ -1,25 +1,90 @@
-CREATE DATABASE ihc;
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: 05-Dez-2017 às 06:55
+-- Versão do servidor: 5.7.19
+-- PHP Version: 5.6.31
 
-USE ihc;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-CREATE TABLE usuarios(
-    email VARCHAR(60) NOT NULL PRIMARY KEY,
-    nome VARCHAR(60),
-    senha VARCHAR(40),
-    INDEX (email)
-);
 
-CREATE TABLE videos(
-    nome_video VARCHAR(70),
-    conceito VARCHAR(300),
-    descricao VARCHAR(300),
-    link VARCHAR(400),
-    INDEX (nome_video)
-);
-INSERT INTO usuarios (nome_video, conceito, descricao, link)
-VALUES ('wingardiumLeviRola','aVaraqueRaba','A Rola Wesley','xvideos.com');
-INSERT INTO usuarios (nome_video, conceito, descricao, link)
-VALUES ('m4a4','AK-47','AWP','p90');
-INSERT INTO videos (nome_video, conceito, descricao, link)
-VALUES ('Rafael','Michelangelo','Donatelo','<iframe width="854" height="480" src="https://www.youtube.com/embed/q8gnAgrdUSc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>');
-INSERT INTO `videos` (`nome_video`, `conceito`, `descricao`, `link`) VALUES ('teste', 'teste', 'teste', '<iframe width="854" height="480" src="https://www.youtube.com/embed/nWsNzK1VM8k?autoplay=1&cc_load_policy=1" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>');
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ihc`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `email` varchar(60) NOT NULL,
+  `nome` varchar(60) DEFAULT NULL,
+  `senha` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`email`),
+  KEY `email` (`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`email`, `nome`, `senha`) VALUES
+('Faustop@gmail.com', 'Guilherme', '7c4a8d09ca3762af61e59520943dc26494f8941b');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `videos`
+--
+
+DROP TABLE IF EXISTS `videos`;
+CREATE TABLE IF NOT EXISTS `videos` (
+  `nome_video` varchar(70) DEFAULT NULL,
+  `conceito` varchar(300) DEFAULT NULL,
+  `descricao` varchar(300) DEFAULT NULL,
+  `link` varchar(400) DEFAULT NULL,
+  KEY `nome_video` (`nome_video`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `videos`
+--
+
+INSERT INTO `videos` (`nome_video`, `conceito`, `descricao`, `link`) VALUES
+('Windows', 'Sistema Operacional da Microsoft', 'InformÃ¡tica em LIBRAS ', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/Pv0p0hgTDCI\" allowfullscreen></iframe>'),
+('Winzip', 'Programa de CompctaÃ§Ã£o', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/LoR0yLLxi84\" allowfullscreen></iframe>'),
+('USB', 'Tecnologia de conexÃ£o de perifÃ©ricos', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/qnsO9qbptbk\" allowfullscreen></iframe>'),
+('Array (Matriz)', 'Estrutura de dados no qual os elementos sÃ£o identificados por chaves', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/7MYVrldw-Do\" allowfullscreen></iframe>'),
+('For', 'Estrutura de loop para programaÃ§Ã£o', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/GgcCrrt2ncw\" allowfullscreen></iframe>'),
+('VariÃ¡vel', 'Objeto capaz de representar valor ou expressÃ£o', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/iiTFMSFZSP4\" allowfullscreen></iframe>'),
+('Vetor', 'Estrutura de dados indexados', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/OvqDSeuCVAw\" allowfullscreen></iframe>'),
+('Virus', 'Software malicioso', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/wHSyAct8Hxk\" allowfullscreen></iframe>'),
+('Write', 'OperÃ§Ã£o de escrita', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/UREZMm0-3nw\" allowfullscreen></iframe>'),
+('Site', 'Conjunto de paginas WEB', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/SW6ib4cVd6s\" allowfullscreen></iframe>'),
+('Pascal', 'Linguagem de programaÃ§Ã£o', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/uryj6VgO1YI\" allowfullscreen></iframe>'),
+('Programa', 'Conjunto de instruÃ§Ãµes que descrevem uma tarafa realizada no computador', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/fMvMHh0bTOE\" allowfullscreen></iframe>'),
+('Google', 'Site de busca ', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/WJe84s0nwSE\" allowfullscreen></iframe>'),
+('Internet', 'Rede de computadores mundial', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/c9XK7lGo5V4\" allowfullscreen></iframe>'),
+('Imprimir', 'O ato de reproduzir algo', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/mUnj8QhV3Ag\" allowfullscreen></iframe>'),
+('Facebook', 'Rede social', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/Gf7IwbKeLug\" allowfullscreen></iframe>'),
+('Excel', 'Editor de planilhas', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/2nByK5yiwHQ\" allowfullscreen></iframe>'),
+('Software', 'Conjunto de componentes lÃ³gicos e instruÃ§Ãµes que controlam o funiconamento do computador', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/PkmmkGSWfHY\" allowfullscreen></iframe>'),
+('Linux', 'Nucleo do sitema operacional', 'InformÃ¡tica em LIBRAS', '<iframe width=\"420\" height=\"315\" src=\"//www.youtube.com/embed/dQ8rPpR2-Rk\" allowfullscreen></iframe>');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
