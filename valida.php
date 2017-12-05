@@ -111,6 +111,9 @@ if(empty($_SESSION['msg'] == '')){
 
       $_SESSION['msg'] = '<div class="alert alert-success text-center" role="alert">Bem vindo '.$_SESSION['nome'].'</div>';
       header('Location: index.php');
+    }else{
+      $_SESSION['msg'] = '<div class="alert alert-danger text-center" role="alert">Usuário não encontrado</div>';
+      header('Location: login.php');
     }
   }
 
